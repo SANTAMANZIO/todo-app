@@ -1,0 +1,262 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  animation: slideIn 0.3s ease-out;
+}
+
+.item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.item.completed {
+  opacity: 0.7;
+  background-color: #f3f4f6;
+}
+
+.item.completed .text {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+.item.overdue {
+  border-left-color: var(--danger-color);
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.checkbox:hover {
+  transform: scale(1.1);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.priorityIndicator {
+  width: 3px;
+  height: 20px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: height 0.2s ease;
+}
+
+.item:hover .priorityIndicator {
+  height: 24px;
+}
+
+.textWrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.text {
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.4;
+  word-break: break-word;
+  margin: 0;
+}
+
+.dueDate {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  display: inline-block;
+}
+
+.dueDate.overdueBadge {
+  color: var(--danger-color);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.item:hover .actions {
+  opacity: 1;
+}
+
+.editBtn,
+.deleteBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-light);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.editBtn:hover {
+  background: var(--primary-color);
+}
+
+.deleteBtn:hover {
+  background: var(--danger-color);
+}
+
+.editForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.editInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.editInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.editPriority {
+  display: flex;
+  gap: 6px;
+}
+
+.priorityTag {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.priorityTag.active {
+  border-color: currentColor;
+}
+
+.editDateInput {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.editDateInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.editActions {
+  display: flex;
+  gap: 8px;
+}
+
+.saveBtn,
+.cancelBtn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveBtn {
+  background: var(--primary-color);
+  color: white;
+}
+
+.saveBtn:hover {
+  background: #4338ca;
+}
+
+.cancelBtn {
+  background: var(--border-color);
+  color: var(--text-dark);
+}
+
+.cancelBtn:hover {
+  background: #d1d5db;
+}
+
+.empty {
+  background: white;
+  border-radius: 10px;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.empty h3 {
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.empty p {
+  color: var(--text-light);
+}
+
+@media (max-width: 640px) {
+  .item {
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    opacity: 1;
+    order: 3;
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+  }
+}

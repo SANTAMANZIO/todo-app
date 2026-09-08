@@ -1,0 +1,94 @@
+.container {
+  background: white;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.filterGroup,
+.sortGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  padding: 6px 12px;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.select {
+  padding: 6px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background-color: white;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.select:hover {
+  border-color: var(--primary-color);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+@media (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .filterGroup,
+  .sortGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .buttons {
+    flex: 1;
+  }
+
+  .select {
+    flex: 1;
+  }
+}

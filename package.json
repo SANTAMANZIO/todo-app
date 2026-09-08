@@ -1,0 +1,1 @@
+{"name":"todo-app","version":"1.0.0","description":"To-Do List application with local storage functionality","private":false,"scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},"dependencies":{"react":"^18.3.0","react-dom":"^18.3.0","next":"^14.0.0"},"devDependencies":{"typescript":"^5.0.0","@types/react":"^18.3.0","@types/node":"^20.0.0"}}
